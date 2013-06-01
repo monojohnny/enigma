@@ -1,0 +1,5 @@
+http://www.newscientist.com/article/mg21829191.800-enigma-number-1751.html
+
+My granddaughter has been given a set of 36 square tiles, six of each of the colours red (R), orange (O), yellow (Y), green (G), blue (B) and violet (V). In playing with these, she has arranged them into a square pattern in which each row, column and main diagonal contains each colour just once.
+
+The colours in the top row are in the above order, left to right, while another row has the colours in the reverse order. One of the main diagonals contains consecutively in order the four tiles red, orange, yellow and green, or the reverse. From top to bottom what are the letters forming the other diagonal?
