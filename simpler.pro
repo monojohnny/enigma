@@ -23,11 +23,15 @@ possible(Row, Column,  Colour) :-
 
 /* need to split this up ; if we do NOT find a tile in the same column (ie, sameRow), we should pass this, but only after also ensuring no other (same row for instance) constraints are found...*/
 possible(Row, Column,  Colour) :-
-	DifferentRow \==Row, Colour \== CompareCol,
-	tile(DifferentRow, Column, colour(CompareCol) ).
+	\+tile(Row, Column, colour(C) ), C\==Colour,
+		Colour \== CompareCol,
+		DifferentRow \==Row, 
+		tile(DifferentRow, Column,  colour(CompareCol) ),
+ 		Colour \==CompareRow,
+		DifferentColumn \==Column, 
+		tile(Row, DifferentColumn,  colour(CompareRow) ).
 
 /*
-	tile(Row, DifferentColumn,  colour(CompareRow) ), 
 		DifferentColumn \==Column, 
 		Colour \==CompareRow.
 	Row=Column, tile(DiagRow1, DiagCol1, colour(CompareDiagTL) ), DiagRow1\==Row, DiagCol1\==Column, DiagRow1=DiagCol1,Colour\==CompareDiagTL; 
