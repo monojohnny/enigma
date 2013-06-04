@@ -21,14 +21,14 @@ for row in range(1, 6): # skip first row
 	for column in range(0, 6):
 		out.write("possible(%d,%d, C) :- \n"%(row, column) )
 		out.write("\t/* Tile cannot be the same as top tile in same column*/\n")
-		out.write("\ttile(0,%d, colour(Compare) ), C\==Compare"%(column))
+		out.write("\tcolour(C), tile(0,%d, colour(Compare) ), C\==Compare"%(column))
 		if row==column or row+column==5: # detect either main diag
 			if row==column: # define top-left main diaganol
 				out.write(",\n\t/* Tile cannot be the same as top-left diag*/\n")
-				out.write("\ttile(0,0, colour(Compare_tl) ), C\==Compare_tl.\n")
+				out.write("\tcolour(C), tile(0,0, colour(Compare_tl) ), C\==Compare_tl.\n")
 			if row+column==5: # define top-right main diaganol
 				out.write(",\n\t/* Tile cannot be the same as top-right diag*/\n")
-				out.write("\ttile(0,5, colour(Compare_tr) ), C\==Compare_tr.\n")
+				out.write("\tcolour(C), tile(0,5, colour(Compare_tr) ), C\==Compare_tr.\n")
 		else:
 			out.write(".\n")
 
