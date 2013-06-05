@@ -56,3 +56,21 @@ fourInDiag(StartRow, StartColumn, C1, C2, C3, C4 ) :-
 	Row2 is StartRow+1 ,Col2 is StartColumn-1, possible(Row2, Col2, C2),
 	Row3 is StartRow+2 ,Col3 is StartColumn-2, possible(Row3, Col3, C3),
 	Row4 is StartRow+3 ,Col4 is StartColumn-3, possible(Row4, Col4, C4).
+
+/* We are also given the state of another row - we are just not told which , and since it is a mirror of the top-row, we need to use the diag rule to find where it fits */
+/* We are being slightly cheeky here and rewriting the requirement in terms of the already defined row1, rather than having open ended args here...*/
+/* Thinking we can cheekier again and use recursion here... ? (hence that 'Rownum<6' to ensure we have an exit clause....) */
+rowFits(Rownum):-
+	Rownum<6,
+/* Instantiate (in reverse order to row1) our colours */
+	tile(0,0, colour(C5) ),
+	tile(0,1, colour(C4) ),
+	tile(0,2, colour(C3) ),
+	tile(0,3, colour(C2) ),
+	tile(0,4, colour(C1) ),
+	tile(0,5, colour(C0) ),
+	dummy=dummy.
+
+	/* construct fourInDiag tests here - using 'Rownum' as the 'anchor'...*/
+	/*TBD:*/
+
