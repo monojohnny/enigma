@@ -1,4 +1,3 @@
-/* Not working - suspect we are now jumping out of second 'possible' if row==column (when we really both tests need to be checked...)*/
 colour(red).
 colour(orange).
 colour(yellow).
