@@ -49,7 +49,7 @@ fourInDiag(StartRow, StartColumn, C1, C2, C3, C4 ) :-
 	Row3 is 2+StartRow, Col3 is 2+StartColumn, possible(Row3, Col3, C3),
 	Row4 is 3+StartRow, Col4 is 3+StartColumn, possible(Row4, Col4, C4).
 	
-/* Test for Top-Left Diag to start with only... */
+/* Test for Top-Right Diag to start with only...this can only work 'downwards' */
 fourInDiag(StartRow, StartColumn, C1, C2, C3, C4 ) :-
 	5 is StartRow + StartColumn,
 	possible(StartRow, StartColumn, C1),
