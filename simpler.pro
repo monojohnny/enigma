@@ -32,6 +32,9 @@ tile(0,3, colour(green) ).
 tile(0,4, colour(blue) ).
 tile(0,5, colour(violet) ).
 
+grid(Row, Column, Colour):-
+	tile( row(Row), column(Column), colour(Colour) ).
+
 
 rowBlocked(Row, Column, Colour) :-
 	tile(Row, ColumnCompare, colour(Colour) ),
